@@ -15,7 +15,7 @@ public class FemaleButtonScripts : MonoBehaviour, IPointerEnterHandler
     // Use this for initialization
     void Start()
     {
-        config = GameObject.Find("GameObject").GetComponent<configScripts>();
+        config = GameObject.Find("Config").GetComponent<configScripts>();
         count = config.count;
         image1P = config.image1P;
         image2P = config.image2P;
