@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2fd1a598612474909be9afe16ce47ef8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Stageimage: {instanceID: 0}
+  - spriteStage1: {instanceID: 0}
+  - spriteStage2: {instanceID: 0}
+  - spriteStage3: {instanceID: 0}
+  - spriteStage4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
