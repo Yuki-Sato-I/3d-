@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartButtonScript : MonoBehaviour {
     public AudioClip startSe;
+    public int count = 0;
 
+    Button button;
+    private void Start()
+    {
+        button = GetComponent<Button>();
+    }
     public void OnClickStartButton() {
 
+        button.interactable = false;
+        count += 1;
         StartCoroutine("CharChangeScene");
 
     }
+
     public IEnumerator CharChangeScene()
     {
         //ここで音
@@ -21,4 +31,6 @@ public class StartButtonScript : MonoBehaviour {
         SceneManager.LoadScene("CharacterSelectScene");
 
     }
+
+
 }
