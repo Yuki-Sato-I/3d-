@@ -19,6 +19,7 @@ public class ExitButtonScript : MonoBehaviour {
         }
         else
         {
+            GetComponent<Button>().interactable = false;
             Debug.Log("実行ファイル時に有効。Unity内では無効");
             Application.Quit();
         }
