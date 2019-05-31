@@ -4,15 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartButtonScript : MonoBehaviour {
+    public AudioClip startSe;
 
     public void OnClickStartButton() {
 
-        Debug.Log("aaaaaa");
+        StartCoroutine("CharChangeScene");
 
-
-        //ここで音とかアクションとか出せれば最高
-
+    }
+    public IEnumerator CharChangeScene()
+    {
+        //ここで音
+        GetComponent<AudioSource>().PlayOneShot(startSe);
+        //2P選択時に余韻に浸る
+        yield return new WaitForSeconds(2);
         //キャラクター選択画面に移動
         SceneManager.LoadScene("CharacterSelectScene");
+
     }
 }

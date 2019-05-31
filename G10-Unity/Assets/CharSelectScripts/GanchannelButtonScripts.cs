@@ -27,27 +27,40 @@ public class GanchannelButtonScripts : MonoBehaviour, IPointerEnterHandler
         if (count == 0)
         {
             //1p決定
+            GetComponent<AudioSource>().PlayOneShot(config.se);
             count += 1;
             config.count = count;
-            print(count);
+            print("1Pが選択されました");
         }
         else if (count == 1)
         {
             //2p決定
-            count++;
-            //ステージ選択画面に行く
+            GetComponent<AudioSource>().PlayOneShot(config.se);
+            count += 1;
+            print("2Pが選択されました");
+            //2秒まってステージ選択画面に行く
+            config.StartCoroutine("ChangeScene");
 
         }
     }
     // Update is called once per frame
     void Update () {
+        count = config.count;
 		
 	}
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        image1P.sprite = spriteGanchan;
-        print("マウスカーソルが重なりました");
+        if (count == 0)
+        {
+            image1P.sprite = spriteGanchan;
+            print("カーソルが重なりました1");
+        }
+        else if (count == 1)
+        {
+            image2P.sprite = spriteGanchan;
+            print("カーソルが重なりました2");
+        }
     }
 
 }
