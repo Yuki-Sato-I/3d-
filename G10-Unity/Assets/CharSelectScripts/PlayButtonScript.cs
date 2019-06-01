@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class PlayButtonScript : MonoBehaviour {
 
     configScripts config;
+    public AudioClip se1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         GetComponent<Button>().interactable = false;
         config = GameObject.Find("Config").GetComponent<configScripts>();
     }
@@ -26,8 +27,12 @@ public class PlayButtonScript : MonoBehaviour {
         }
     }
 
-    public void PlayButtonClicked() { 
+    public void PlayButtonClicked() {
+        //ここ無効化ならない、なぜか
+        GetComponent<Button>().interactable = false;
         //ステージ選択画面に
+        GetComponent<AudioSource>().PlayOneShot(se1);
         config.StartCoroutine("ChangeScene");
+
     }
 }

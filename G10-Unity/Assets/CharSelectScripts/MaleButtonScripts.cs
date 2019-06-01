@@ -24,22 +24,13 @@ public class MaleButtonScripts : MonoBehaviour, IPointerEnterHandler
 
     public void ButtonClicked()
     {
-        if (count == 0)
+        if (count == 0 || count == 1)
         {
             //1p決定
             GetComponent<AudioSource>().PlayOneShot(config.se);
             count += 1;
             config.count = count;
-            print("1Pが選択されました");
-
-        }
-        else if (count == 1)
-        {
-            //2p決定
-            GetComponent<AudioSource>().PlayOneShot(config.se);
-            count += 1;
-            config.count = count;
-            print("2Pが選択されました");
+            print(string.Format("{0}Pが選択されました", count));
 
         }
     }
