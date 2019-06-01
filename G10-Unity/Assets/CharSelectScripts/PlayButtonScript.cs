@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CancelButtonScript : MonoBehaviour {
+public class PlayButtonScript : MonoBehaviour {
 
     configScripts config;
 
@@ -15,21 +15,19 @@ public class CancelButtonScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(config.count == 0)//初期
+        if (config.count == 2)//キャラ選択完了
         {
-            GetComponent<Button>().interactable = false;
+            GetComponent<Button>().interactable = true;
         }
         else
         {
             //1pだけもしくは両方どちらかが選択されている時のみ有効
-            GetComponent<Button>().interactable = true;
+            GetComponent<Button>().interactable = false;
         }
     }
 
-    public void CancelButtonClicked() {
-
-        config.count -= 1;
-    
+    public void PlayButtonClicked() { 
+        //ステージ選択画面に
+        config.StartCoroutine("ChangeScene");
     }
-
 }

@@ -37,9 +37,8 @@ public class GanchannelButtonScripts : MonoBehaviour, IPointerEnterHandler
             //2p決定
             GetComponent<AudioSource>().PlayOneShot(config.se);
             count += 1;
+            config.count = count;
             print("2Pが選択されました");
-            //2秒まってステージ選択画面に行く
-            config.StartCoroutine("ChangeScene");
 
         }
     }
