@@ -858,6 +858,7 @@ GameObject:
   - component: {fileID: 697596832}
   - component: {fileID: 697596831}
   - component: {fileID: 697596830}
+  - component: {fileID: 697596834}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -946,6 +947,13 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!81 &697596834
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 697596829}
+  m_Enabled: 0
 --- !u!1 &881685870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1018,7 @@ MonoBehaviour:
   spriteStage1: {fileID: 21300000, guid: a244fb37ee6b94c9995c3079bb0cb164, type: 3}
   spriteStage2: {fileID: 21300000, guid: a4deb212107f54a2fa2dc6d73da390cd, type: 3}
   spriteStage3: {fileID: 21300000, guid: d2e4d61135cfb43dda6f64cb30e8d049, type: 3}
-  spriteStage4: {fileID: 21300000, guid: 627b78c14213543d4a211e59c30a8af6, type: 3}
+  spriteStage4: {fileID: 21300000, guid: 5c7509f4137264b50b37b0642d3bf676, type: 3}
 --- !u!114 &881685874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,8 +1424,8 @@ Camera:
   m_GameObject: {fileID: 1298791671}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1528,7 +1536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: Random
 --- !u!222 &1480732956
 CanvasRenderer:
   m_ObjectHideFlags: 0
