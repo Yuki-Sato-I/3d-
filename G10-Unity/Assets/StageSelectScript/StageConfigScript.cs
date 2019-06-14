@@ -11,17 +11,22 @@ public class StageConfigScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake ()
- {
-	Stageimage = GameObject.Find("Image").GetComponent<Image>();
-    //spriteStage1 = Resources.Load<Sprite>("stage1");
-    //spriteStage2 = Resources.Load<Sprite>("stage2");
-    //spriteStage3 = Resources.Load<Sprite>("stage3");
-    //spriteStage4 = Resources.Load<Sprite>("stage4");
-    
- }
+    {
+	    Stageimage = GameObject.Find("Image").GetComponent<Image>();
+
+        //1pが選択したキャラの番号
+        int char1P = configScripts.GetPlayer1Char();
+        //2pが選択したキャラの番号
+        int char2P = configScripts.GetPlayer2Char();
+
+        print(char1P);
+        print(char2P);
+
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
-        }
+	void Update () 
+    {
+    
+    }
 }

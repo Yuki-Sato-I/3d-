@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class configScripts : MonoBehaviour {
 
+    public static int charSelect1;
+    public static int charSelect2;
+
+    public int char1;
+    public int char2;
+
     public int count;
     public Image image1P;
     public Image image2P;
@@ -27,6 +33,11 @@ public class configScripts : MonoBehaviour {
     }
 
     public void LoadStageSelectScene() {
+        charSelect1 = char1;
+        charSelect2 = char2;
+        print(string.Format("{0}のキャラ", charSelect1));
+        print(string.Format("{0}のキャラ", charSelect2));
+
         SceneManager.LoadScene("StageSelectScene");
     }
 
@@ -42,4 +53,15 @@ public class configScripts : MonoBehaviour {
         LoadStageSelectScene();
 
     }
+
+    //キャラ情報（何を選んだか取得する関数）
+    public static int GetPlayer1Char() 
+    {
+        return charSelect1;
+     }
+    public static int GetPlayer2Char()
+    {
+        return charSelect2;
+    }
+
 }

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class RandomButtonScripts : MonoBehaviour, IPointerEnterHandler
 {
+
+    public int RANDOM;
     configScripts config;
     int count;
     Image image1P;
@@ -15,6 +17,7 @@ public class RandomButtonScripts : MonoBehaviour, IPointerEnterHandler
     // Use this for initialization
     void Start()
     {
+        RANDOM = Random.Range(0, 3);
         config = GameObject.Find("Config").GetComponent<configScripts>();
         count = config.count;
         image1P = config.image1P;
@@ -30,8 +33,16 @@ public class RandomButtonScripts : MonoBehaviour, IPointerEnterHandler
             GetComponent<AudioSource>().PlayOneShot(config.se);
             count += 1;
             config.count = count;
+            //config.char1 = 
             print(string.Format("{0}Pが選択されました", count));
-
+            if (count == 0)
+            {
+                config.char1 = RANDOM;
+            }
+            else if (count == 1)
+            {
+                config.char2 = RANDOM;
+            }
         }
 
     }

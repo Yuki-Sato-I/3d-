@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Stage2ButtonScript : MonoBehaviour, IPointerEnterHandler
 {
@@ -20,6 +21,7 @@ public class Stage2ButtonScript : MonoBehaviour, IPointerEnterHandler
     public void OnClicked()
     {
         print("ボタンをクリックしました");
+        //シーン変更
     }
 
     void Update()
