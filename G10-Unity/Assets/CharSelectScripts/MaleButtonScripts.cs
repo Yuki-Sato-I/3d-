@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MaleButtonScripts : MonoBehaviour, IPointerEnterHandler
 {
+    int MALE = 0;
     configScripts config;
     int count;
     Image image1P;
@@ -31,7 +32,14 @@ public class MaleButtonScripts : MonoBehaviour, IPointerEnterHandler
             count += 1;
             config.count = count;
             print(string.Format("{0}Pが選択されました", count));
-
+            if (count == 1)
+            {
+                config.char1 = MALE;
+            }
+            else if (count == 2)
+            {
+                config.char2 = MALE;
+            }
         }
     }
     // Update is called once per frame
