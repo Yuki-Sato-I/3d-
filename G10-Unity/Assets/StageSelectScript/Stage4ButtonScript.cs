@@ -23,6 +23,7 @@ public class Stage4ButtonScript : MonoBehaviour, IPointerEnterHandler
     {
         print("ボタンをクリックしました");
         //シーン変更
+        stageconfig.StageScene(Random.Range(1,4));
     }
 
     void Update()

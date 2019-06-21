@@ -55,11 +55,11 @@ public class configScripts : MonoBehaviour {
     }
 
     //キャラ情報（何を選んだか取得する関数）
-    public static int GetPlayer1Char() 
+    public static int GetPlayer1Num() 
     {
         return charSelect1;
      }
-    public static int GetPlayer2Char()
+    public static int GetPlayer2Num()
     {
         return charSelect2;
     }

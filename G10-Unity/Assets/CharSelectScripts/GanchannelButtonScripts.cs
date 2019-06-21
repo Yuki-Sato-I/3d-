@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GanchannelButtonScripts : MonoBehaviour, IPointerEnterHandler
 {
-    int GANCHAN = 3;
+    int GANCHAN = 2;
     configScripts config;
     int count;
     Image image1P;
@@ -32,11 +32,11 @@ public class GanchannelButtonScripts : MonoBehaviour, IPointerEnterHandler
             count += 1;
             config.count = count;
             print(string.Format("{0}Pが選択されました", count));
-            if(count == 0) 
+            if(count == 1) 
             {
                 config.char1 = GANCHAN;
              }
-            else if(count == 1)
+            else if(count == 2)
             {
                 config.char2 = GANCHAN;
             }

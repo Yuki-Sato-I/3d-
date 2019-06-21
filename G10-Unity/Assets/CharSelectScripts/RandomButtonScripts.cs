@@ -35,11 +35,11 @@ public class RandomButtonScripts : MonoBehaviour, IPointerEnterHandler
             config.count = count;
             //config.char1 = 
             print(string.Format("{0}Pが選択されました", count));
-            if (count == 0)
+            if (count == 1)
             {
                 config.char1 = RANDOM;
             }
-            else if (count == 1)
+            else if (count == 2)
             {
                 config.char2 = RANDOM;
             }

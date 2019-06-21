@@ -22,6 +22,7 @@ public class Stage2ButtonScript : MonoBehaviour, IPointerEnterHandler
     {
         print("ボタンをクリックしました");
         //シーン変更
+        stageconfig.StageScene(2);
     }
 
     void Update()

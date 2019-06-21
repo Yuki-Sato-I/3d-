@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class FemaleButtonScripts : MonoBehaviour, IPointerEnterHandler
 {
-    int FEMALE = 2;
+    int FEMALE = 1;
     configScripts config;
     int count;
     Image image1P;
@@ -33,11 +33,11 @@ public class FemaleButtonScripts : MonoBehaviour, IPointerEnterHandler
             count += 1;
             config.count = count;
             print(string.Format("{0}Pが選択されました", count));
-            if (count == 0)
+            if (count == 1)
             {
                 config.char1 = FEMALE;
             }
-            else if (count == 1)
+            else if (count == 2)
             {
                 config.char2 = FEMALE;
             }
