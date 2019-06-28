@@ -10,7 +10,7 @@ public class MainGameScript : MonoBehaviour {
     void Start () {
 
 
-        DamageCalcScript damage = GameObject.Find("damageCalc").GetComponent<DamageCalcScript>();
+        DamageCalcScript damage = GameObject.Find("DamageCalc").GetComponent<DamageCalcScript>();
         damage.CalcDamage(GameObject.Find("1pConfig").GetComponent<Config1pScript>(),GameObject.Find("2pConfig").GetComponent<Config2pScript>());
 
     }
