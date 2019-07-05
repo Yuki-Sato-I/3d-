@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Config1pScript : PlayerConfig{
+public class Config1pScript : PlayerConfig
+{
 
     public GameObject TestChar;
     public GameObject MountainDew;    //1
     public GameObject Pepsi;          //2
     public GameObject Ganchan;        //3
 
+    GameObject player1;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         base.HP = 100;
         base.AT = 200;
         base.DF = 300;
@@ -18,7 +22,7 @@ public class Config1pScript : PlayerConfig{
         // プレハブを取得
         // プレハブからインスタンスを生成
         int NumOf1p = configScripts.GetPlayer1Num();
-        GameObject player1;
+
         //キャラ生成
         switch (NumOf1p)
         {
@@ -38,9 +42,36 @@ public class Config1pScript : PlayerConfig{
         player1.name = "1pChar";
         player1.tag = "player1";
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("w")) //前
+        {
+            print("w");
+        }
+        else if (Input.GetKeyUp("a")) //右
+        {
+            print("a");
+        }
+        else if (Input.GetKeyDown("s")) //後ろ
+        {
+            print("s");
+        }
+        else if (Input.GetKey("d")) //左
+        {
+            print("d");
+        }
+        else if (Input.GetKey("q")) //キック
+        {
+            print("q");
+        }
+        else if (Input.GetKey("e")) //パンチ
+        {
+            print("e");
+        }
+
+    }
+
+
 }
