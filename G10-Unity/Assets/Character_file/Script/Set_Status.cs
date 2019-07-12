@@ -27,7 +27,7 @@ public class Set_Status : MonoBehaviour {
     {
     }
 
-    public string getName(string NAME)　//キャラクターの名前を取得
+    public string getName()　//キャラクターの名前を取得
     {
         return NAME;
     }
@@ -37,7 +37,7 @@ public class Set_Status : MonoBehaviour {
         this.NAME = NAME;
     }
 
-    public float getHP(float HP)　//キャラクターの体力を取得
+    public float getHP()　//キャラクターの体力を取得
     {
         return HP;
     }
@@ -47,7 +47,7 @@ public class Set_Status : MonoBehaviour {
         this.HP = HP;
     }
 
-    public float getAT(float AT)　//キャラクターの攻撃力を取得
+    public float getAT()　//キャラクターの攻撃力を取得
     {
         return AT;
     }
@@ -57,7 +57,7 @@ public class Set_Status : MonoBehaviour {
         this.AT = AT;
     }
 
-    public float getDF(float DF)　//キャラクターの防御力を取得
+    public float getDF()　//キャラクターの防御力を取得
     {
         return DF;
     }
@@ -67,7 +67,7 @@ public class Set_Status : MonoBehaviour {
         this.DF = DF;
     }
 
-    public Vector3 getposition(Vector3 mypos) //キャラクターの座標を取得
+    public Vector3 getposition() //キャラクターの座標を取得
     {
         return mypos;
     }
