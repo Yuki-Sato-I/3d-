@@ -20,6 +20,8 @@ public class Config2pScript : PlayerConfig {
         int NumOf2p = configScripts.GetPlayer2Num();
         GameObject player2;
 
+        NumOf2p = 3;
+
         //2pのキャラ生成
         switch (NumOf2p)
         {

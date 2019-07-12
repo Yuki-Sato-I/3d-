@@ -12,17 +12,20 @@ public class Config1pScript : PlayerConfig
 
     GameObject player1;
 
+    static float HP;
+    static float AT;
+    static float DF;
+
+
     // Use this for initialization
     void Start()
-    {
-        base.HP = 100;
-        base.AT = 200;
-        base.DF = 300;
+    { 
 
         // プレハブを取得
         // プレハブからインスタンスを生成
         int NumOf1p = configScripts.GetPlayer1Num();
 
+        NumOf1p = 3;
         //キャラ生成
         switch (NumOf1p)
         {
@@ -41,6 +44,7 @@ public class Config1pScript : PlayerConfig
         }
         player1.name = "1pChar";
         player1.tag = "player1";
+        //HP = player1.HP;
     }
 
     // Update is called once per frame
