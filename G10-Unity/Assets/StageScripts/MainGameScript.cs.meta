@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7a7095b0f781e467cb864d03ec501bbe
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TestChar: {fileID: 1888021508872568, guid: 3f9b67ffc4ffa4055960a834638c9d85, type: 2}
+  - MountainDew: {instanceID: 0}
+  - Pepsi: {instanceID: 0}
+  - Ganchan: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
