@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 697109685}
   - component: {fileID: 697109686}
+  - component: {fileID: 697109687}
   m_Layer: 0
   m_Name: 2pConfig
   m_TagString: Untagged
@@ -521,6 +522,26 @@ MonoBehaviour:
   Player2_AT: 0
   Player2_DF: 0
   Player2_Pos: {x: 0, y: 0, z: 0}
+  Player2_Rote: {x: 0, y: 0, z: 0}
+  Enemy: {fileID: 1314116383}
+--- !u!95 &697109687
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 697109684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db548c68054764dc6a5e3be9006134df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &715756494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314116384}
   - component: {fileID: 1314116385}
+  - component: {fileID: 1314116386}
   m_Layer: 0
   m_Name: 1pConfig
   m_TagString: Untagged
@@ -1283,6 +1305,26 @@ MonoBehaviour:
   Player1_AT: 0
   Player1_DF: 0
   Player1_Pos: {x: 0, y: 0, z: 0}
+  Player1_Rote: {x: 0, y: 0, z: 0}
+  Enemy: {fileID: 697109684}
+--- !u!95 &1314116386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314116383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db548c68054764dc6a5e3be9006134df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1641934845
 GameObject:
   m_ObjectHideFlags: 0
