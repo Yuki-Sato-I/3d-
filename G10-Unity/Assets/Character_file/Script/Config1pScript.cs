@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+
 public class Config1pScript : PlayerConfig
 {
+    private Animator anim;                      // Animatorへの参照
+    private AnimatorStateInfo currentState;     // 現在のステート状態を保存する参照
+    private AnimatorStateInfo previousState;    // ひとつ前のステート状態を保存する参照
 
     public GameObject TestChar;
     public GameObject MountainDew;    //1
@@ -18,15 +23,23 @@ public class Config1pScript : PlayerConfig
     public float Player1_AT;
     public float Player1_DF;
     public Vector3 Player1_Pos;
+    public Vector3 Player1_Rote;
+
+    public GameObject Enemy;
+    Vector3 Enemy_Pos;
 
 
 
     // Use this for initialization
     void Start()
-    { 
+    {
 
         // プレハブを取得
         // プレハブからインスタンスを生成
+        anim = GetComponent<Animator>();
+        currentState = anim.GetCurrentAnimatorStateInfo(0);
+        previousState = currentState;
+        Debug.Log(anim);
         int NumOf1p = configScripts.GetPlayer1Num();
 
         NumOf1p = 1;
@@ -52,7 +65,6 @@ public class Config1pScript : PlayerConfig
         player1.name = "1pChar";
         player1.tag = "player1";
         //HP = player1.HP;
-        Debug.Log(script.getHP());
     }
 
     // Update is called once per frame
@@ -62,30 +74,46 @@ public class Config1pScript : PlayerConfig
         Player1_AT = script.getAT();
         Player1_DF = script.getDF();
         Player1_Pos = script.getposition();
+        Player1_Rote = script.getrotetion();
 
-        if (Input.GetKeyDown("w")) //前
+        Transform myTransform = this.transform;
+        Vector3 worldAngle = myTransform.eulerAngles;
+        Enemy_Pos = Enemy.GetComponent<Config2pScript>().Player2_Pos;
+        worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player1_Pos.x), (Enemy_Pos.z - Player1_Pos.z))) * Mathf.Rad2Deg;
+        script.setrotetion(worldAngle);
+        player1.transform.eulerAngles = worldAngle;
+        print(worldAngle);
+
+
+        if (Input.GetKeyDown("w")) //前進
         {
+            script.Player_Run();
             print("w");
         }
-        else if (Input.GetKeyUp("a")) //右
+        else if (Input.GetKeyUp("w")) //前進ストップ
         {
-            print("a");
+            script.Player_Runcancel();
+            print("w");
         }
-        else if (Input.GetKeyDown("s")) //後ろ
+        else if (Input.GetKeyDown("s")) //ジャブ
         {
+            script.Player_Jab();
             print("s");
         }
-        else if (Input.GetKey("d")) //左
+        else if (Input.GetKey("a")) //キック
         {
+
+            print("a");
+        }
+        else if (Input.GetKey("d")) //ハイキック
+        {
+            script.Player_Hikick();
             print("d");
         }
-        else if (Input.GetKey("q")) //キック
+        else if (Input.GetKey("x")) //ライジングP
         {
-            print("q");
-        }
-        else if (Input.GetKey("e")) //パンチ
-        {
-            print("e");
+            script.Player_RisingP();
+            print("x");
         }
 
     }
