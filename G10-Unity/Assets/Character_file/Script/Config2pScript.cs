@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Config2pScript : PlayerConfig {
+public class Config2pScript : PlayerConfig
+{
 
     public GameObject TestChar;
     public GameObject MountainDew;    //1
@@ -17,10 +18,15 @@ public class Config2pScript : PlayerConfig {
     public float Player2_AT;
     public float Player2_DF;
     public Vector3 Player2_Pos;
+    public Vector3 Player2_Rote;
+
+    public GameObject Enemy;
+    Vector3 Enemy_Pos;
 
     // Use this for initialization
-    void Start () {
-        
+    void Start()
+    {
+
         // プレハブを取得
         // プレハブからインスタンスを生成
         int NumOf2p = configScripts.GetPlayer2Num();
@@ -50,12 +56,52 @@ public class Config2pScript : PlayerConfig {
         player2.name = "2pChar";
         player2.tag = "player2";
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         Player2_HP = script.getHP();
         Player2_AT = script.getAT();
         Player2_DF = script.getDF();
         Player2_Pos = script.getposition();
+        Player2_Rote = script.getrotetion();
+
+        Transform myTransform = this.transform;
+        Vector3 worldAngle = myTransform.eulerAngles;
+        Enemy_Pos = Enemy.GetComponent<Config1pScript>().Player1_Pos;
+        worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player2_Pos.x), (Enemy_Pos.z - Player2_Pos.z))) * Mathf.Rad2Deg;
+        script.setrotetion(worldAngle);
+        player2.transform.eulerAngles = worldAngle;
+
+        if (Input.GetKeyDown("i")) //前進
+        {
+            script.Player_Run();
+            print("i");
+        }
+        else if (Input.GetKeyUp("i")) //前進ストップ
+        {
+            script.Player_Runcancel();
+            print("i");
+        }
+        else if (Input.GetKeyDown("k")) //ジャブ
+        {
+            script.Player_Jab();
+            print("k");
+        }
+        else if (Input.GetKey("j")) //キック
+        {
+
+            print("j");
+        }
+        else if (Input.GetKey("l")) //ハイキック
+        {
+            script.Player_Hikick();
+            print("l");
+        }
+        else if (Input.GetKey("m")) //ライジングP
+        {
+            script.Player_RisingP();
+            print("m");
+        }
     }
 }
