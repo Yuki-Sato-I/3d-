@@ -23,7 +23,7 @@ public class Stage3ButtonScript : MonoBehaviour, IPointerEnterHandler
     {
         print("ボタンをクリックしました");
         //シーン変更
-        stageconfig.StageScene(1);
+        stageconfig.StageScene(3);
     }
 
     void Update()
