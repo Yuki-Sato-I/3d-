@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class hpSlider1Script : MonoBehaviour {
 
 	Slider hpSlider1;
 	public GameObject player1;
+
+    private int count = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -14,14 +17,19 @@ public class hpSlider1Script : MonoBehaviour {
 
         //1フレーム後に実行する
         StartCoroutine("DelaySetup");
-
     }
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update()
+    {
         hpSlider1.value -= 10f;
-	}
+        if (hpSlider1.value <= 0f && count == 1)
+        {
+            MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
+            MainConfig.winnerNum = 2;
+            StartCoroutine("configDelay");
+        }
+    }
 
     private IEnumerator DelaySetup()
     {
@@ -33,6 +41,17 @@ public class hpSlider1Script : MonoBehaviour {
         hpSlider1.maxValue = player1_HP;
         //スライダーの現在値の設定
         hpSlider1.value = player1_HP;
+        count += 1;
+
+        yield break;
+    }
+
+    private IEnumerator configDelay()
+    {
+
+        yield return null;
+
+        SceneManager.LoadScene("ResultScene");
 
         yield break;
     }
