@@ -2916,10 +2916,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NAME: Pepsiman
-  HP: 100
+  HP: 1300
   AT: 50
   DF: 50
   mypos: {x: 0, y: 0, z: 0}
+  myrote: {x: 0, y: 0, z: 0}
 --- !u!114 &114796412133806790
 MonoBehaviour:
   m_ObjectHideFlags: 1
