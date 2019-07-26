@@ -19,6 +19,7 @@ public class TopButtonScript : MonoBehaviour
 
     public void OnClick()
     {
+        GameObject.Find("Button").GetComponent<Button>().interactable = false;
         StartCoroutine("ChangeToStartPageScene");
     }
 
