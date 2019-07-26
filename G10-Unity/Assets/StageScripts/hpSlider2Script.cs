@@ -22,17 +22,13 @@ public class hpSlider2Script : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        print("****************************************");
-        print(hpSlider2.value);
-        print("****************************************");
 
         hpSlider2.value -= 10f;
         if (hpSlider2.value <= 0f && count == 1) 
         {
-            print("****************************************");
-            print(hpSlider2.value);
-            SceneManager.LoadScene("ResultScene");
-            print("****************************************");
+            MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
+            MainConfig.winnerNum = 1;
+            StartCoroutine("configDelay");
         }
     }
 
@@ -47,6 +43,16 @@ public class hpSlider2Script : MonoBehaviour {
         //スライダーの現在値の設定
         hpSlider2.value = player2_HP;
         count += 1;
+        yield break;
+    }
+
+    private IEnumerator configDelay()
+    {
+
+        yield return null;
+
+        SceneManager.LoadScene("ResultScene");
+
         yield break;
     }
 }

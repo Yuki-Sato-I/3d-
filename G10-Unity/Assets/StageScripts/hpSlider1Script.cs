@@ -25,10 +25,9 @@ public class hpSlider1Script : MonoBehaviour {
         hpSlider1.value -= 10f;
         if (hpSlider1.value <= 0f && count == 1)
         {
-            print("****************************************");
-            print(hpSlider1.value);
-            SceneManager.LoadScene("ResultScene");
-            print("****************************************");
+            MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
+            MainConfig.winnerNum = 2;
+            StartCoroutine("configDelay");
         }
     }
 
@@ -43,6 +42,16 @@ public class hpSlider1Script : MonoBehaviour {
         //スライダーの現在値の設定
         hpSlider1.value = player1_HP;
         count += 1;
+
+        yield break;
+    }
+
+    private IEnumerator configDelay()
+    {
+
+        yield return null;
+
+        SceneManager.LoadScene("ResultScene");
 
         yield break;
     }
