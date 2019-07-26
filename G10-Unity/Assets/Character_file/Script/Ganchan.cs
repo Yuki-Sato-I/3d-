@@ -15,8 +15,6 @@ public class Ganchan : Set_Status
         base.setAT(20);
         base.setDF(70);
 
-
-
     }
 
     // Use this for initialization
