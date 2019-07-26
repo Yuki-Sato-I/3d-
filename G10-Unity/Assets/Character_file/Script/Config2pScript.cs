@@ -31,7 +31,7 @@ public class Config2pScript : PlayerConfig
         // プレハブからインスタンスを生成
         int NumOf2p = configScripts.GetPlayer2Num();
 
-        NumOf2p = 2;
+        NumOf2p = 1;
 
         //2pのキャラ生成
         switch (NumOf2p)
@@ -69,7 +69,21 @@ public class Config2pScript : PlayerConfig
         Transform myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
         Enemy_Pos = Enemy.GetComponent<Config1pScript>().Player1_Pos;
-        worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player2_Pos.x), (Enemy_Pos.z - Player2_Pos.z))) * Mathf.Rad2Deg;
+
+
+        if (Input.GetKey("u"))
+        {
+            worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player2_Pos.x), (Enemy_Pos.z - Player2_Pos.z))) * Mathf.Rad2Deg - 90;
+        }
+        else if (Input.GetKey("o"))
+        { 
+            worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player2_Pos.x), (Enemy_Pos.z - Player2_Pos.z))) * Mathf.Rad2Deg + 90;
+        }
+        else
+        {
+            worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player2_Pos.x), (Enemy_Pos.z - Player2_Pos.z))) * Mathf.Rad2Deg;
+        }
+
         script.setrotetion(worldAngle);
         player2.transform.eulerAngles = worldAngle;
 
@@ -82,6 +96,30 @@ public class Config2pScript : PlayerConfig
         {
             script.Player_Runcancel();
             print("i");
+        }
+
+        if (Input.GetKeyDown("u")) //左
+        {
+            script.Player_Run();
+            print("u");
+        }
+
+        if (Input.GetKeyUp("u")) //左ストップ
+        {
+            script.Player_Runcancel();
+            print("u");
+        }
+
+        if (Input.GetKeyDown("o")) //右
+        {
+            script.Player_Run();
+            print("o");
+        }
+
+        if (Input.GetKeyUp("o")) //右ストップ
+        {
+            script.Player_Runcancel();
+            print("o");
         }
         else if (Input.GetKeyDown("k")) //ジャブ
         {

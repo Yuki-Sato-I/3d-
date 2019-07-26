@@ -29,7 +29,7 @@ public class Pepsiman : Set_Status
         Vector3 pos = myTransform.position;
         Vector3 rote = myTransform.eulerAngles;
         base.setposition(pos);
-        base.setposition(rote);
+        base.setrotetion(rote);
 
 
     }

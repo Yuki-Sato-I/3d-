@@ -42,7 +42,7 @@ public class Config1pScript : PlayerConfig
         Debug.Log(anim);
         int NumOf1p = configScripts.GetPlayer1Num();
 
-        NumOf1p = 1;
+        NumOf1p = 2;
         //キャラ生成
         switch (NumOf1p)
         {
@@ -79,10 +79,24 @@ public class Config1pScript : PlayerConfig
         Transform myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
         Enemy_Pos = Enemy.GetComponent<Config2pScript>().Player2_Pos;
-        worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player1_Pos.x), (Enemy_Pos.z - Player1_Pos.z))) * Mathf.Rad2Deg;
+        Debug.Log(Enemy_Pos);
+
+        if (Input.GetKey("q"))
+        {
+            worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player1_Pos.x), (Enemy_Pos.z - Player1_Pos.z))) * Mathf.Rad2Deg - 90;
+
+        }else if (Input.GetKey("e"))
+        {
+            worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player1_Pos.x), (Enemy_Pos.z - Player1_Pos.z))) * Mathf.Rad2Deg + 90;
+        }
+        else
+        { 
+            worldAngle.y = (Mathf.Atan2((Enemy_Pos.x - Player1_Pos.x), (Enemy_Pos.z - Player1_Pos.z))) * Mathf.Rad2Deg;
+        }
+
         script.setrotetion(worldAngle);
         player1.transform.eulerAngles = worldAngle;
-        print(worldAngle);
+
 
 
         if (Input.GetKeyDown("w")) //前進
@@ -90,11 +104,37 @@ public class Config1pScript : PlayerConfig
             script.Player_Run();
             print("w");
         }
-        else if (Input.GetKeyUp("w")) //前進ストップ
-        {
+
+        if (Input.GetKeyUp("w")) //前進ストップ
+        { 
             script.Player_Runcancel();
             print("w");
         }
+
+        if (Input.GetKeyDown("q")) //左
+        {
+            script.Player_Run();
+            print("q");
+        }
+
+        if (Input.GetKeyUp("q")) //左ストップ
+        {
+            script.Player_Runcancel();
+            print("q");
+        }
+
+        if (Input.GetKeyDown("e")) //右
+        {
+            script.Player_Run();
+            print("e");
+        }
+
+        if (Input.GetKeyUp("e")) //右ストップ
+        {
+            script.Player_Runcancel();
+            print("e");
+        }
+
         else if (Input.GetKeyDown("s")) //ジャブ
         {
             script.Player_Jab();
