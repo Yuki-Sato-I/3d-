@@ -22,7 +22,7 @@ public class hpSlider1Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        hpSlider1.value -= 10f;
+        //hpSlider1.value -= 10f;
         if (hpSlider1.value <= 0f && count == 1)
         {
             MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
