@@ -2895,7 +2895,7 @@ Animator:
   m_GameObject: {fileID: 1141061344700870}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c9bd89c78a4d9cd46bce5a91719891bb, type: 3}
-  m_Controller: {fileID: 9100000, guid: 53383c83dfcb60e49ae25d068c254028, type: 2}
+  m_Controller: {fileID: 9100000, guid: db548c68054764dc6a5e3be9006134df, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2916,10 +2916,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NAME: Pepsiman
-  HP: 100
+  HP: 1300
   AT: 50
   DF: 50
   mypos: {x: 0, y: 0, z: 0}
+  myrote: {x: 0, y: 0, z: 0}
 --- !u!114 &114621259787208898
 MonoBehaviour:
   m_ObjectHideFlags: 1

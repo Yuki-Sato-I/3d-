@@ -6,25 +6,38 @@ public class WinerDisplayScript : MonoBehaviour
 {
 
     Text Winer;
+    int winnerNum;
+    string message = "";
 
     // Use this for initialization
     void Start()
     {
         Winer = GetComponentInChildren<Text>();//UIのテキストの取得の仕方
+        winnerNum = MainGameScript.getWinnerNum();
+
+        switch (winnerNum) {
+            case 1:
+                message = "~1P~";
+                break;
+            case 2:
+                message = "~2P~";
+                break;
+            default:
+                message = "不正な画面遷移";
+                break;
+        }
+        StartCoroutine("Delay");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            print("A");
-            Winer.text = "~1P~";//キーボードのAを押すと1Pと表示される
-        }
-        if (Input.GetKeyDown("space"))
-        {
-            print("space");
-            Winer.text = "~2P~";//キーボードのspaceを押すと2Pと表示される
-        }
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2);
+        Winer.text = message;
+        yield break;
     }
 }
