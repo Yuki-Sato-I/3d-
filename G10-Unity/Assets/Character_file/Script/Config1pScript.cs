@@ -17,16 +17,19 @@ public class Config1pScript : PlayerConfig
 
     public Set_Status script;
 
-    GameObject player1;
+    public GameObject player1;
 
     public float Player1_HP;
     public float Player1_AT;
     public float Player1_DF;
+    public int Player1_State = 0;
     public Vector3 Player1_Pos;
     public Vector3 Player1_Rote;
 
     public GameObject Enemy;
     Vector3 Enemy_Pos;
+
+    public GameObject DamageClac;
 
 
 
@@ -39,7 +42,6 @@ public class Config1pScript : PlayerConfig
         anim = GetComponent<Animator>();
         currentState = anim.GetCurrentAnimatorStateInfo(0);
         previousState = currentState;
-        Debug.Log(anim);
         int NumOf1p = configScripts.GetPlayer1Num();
 
         NumOf1p = 2;
@@ -65,16 +67,18 @@ public class Config1pScript : PlayerConfig
         player1.name = "1pChar";
         player1.tag = "player1";
         //HP = player1.HP;
+
+        Player1_HP = script.getHP();
+        Player1_AT = script.getAT();
+        Player1_DF = script.getDF();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Player1_HP = script.getHP();
-        Player1_AT = script.getAT();
-        Player1_DF = script.getDF();
         Player1_Pos = script.getposition();
         Player1_Rote = script.getrotetion();
+
 
         Transform myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
@@ -96,63 +100,77 @@ public class Config1pScript : PlayerConfig
 
         script.setrotetion(worldAngle);
         player1.transform.eulerAngles = worldAngle;
+        //player1.transform.position
 
-
+        //情報の更新
+        Player1_State = DamageClac.GetComponent<DamageCalcScript>().P1_State;
+        Player1_HP = DamageClac.GetComponent<DamageCalcScript>().P1_HP;
+        
 
         if (Input.GetKeyDown("w")) //前進
         {
             script.Player_Run();
+            Player1_State = 0;
             print("w");
         }
 
         if (Input.GetKeyUp("w")) //前進ストップ
         { 
             script.Player_Runcancel();
+            Player1_State = 0;
             print("w");
         }
 
         if (Input.GetKeyDown("q")) //左
         {
             script.Player_Run();
+            Player1_State = 0;
             print("q");
         }
 
         if (Input.GetKeyUp("q")) //左ストップ
         {
             script.Player_Runcancel();
+            Player1_State = 0;
             print("q");
         }
 
         if (Input.GetKeyDown("e")) //右
         {
             script.Player_Run();
+            Player1_State = 0;
             print("e");
         }
 
         if (Input.GetKeyUp("e")) //右ストップ
         {
             script.Player_Runcancel();
+            Player1_State = 0;
             print("e");
         }
 
         else if (Input.GetKeyDown("s")) //ジャブ
         {
             script.Player_Jab();
+            Player1_State = 1;
             print("s");
         }
-        else if (Input.GetKey("a")) //キック
+        else if (Input.GetKeyDown("a")) //キック
         {
-
+            //script.Player_Kick;
+            Player1_State = 2;
             print("a");
         }
-        else if (Input.GetKey("d")) //ハイキック
+        else if (Input.GetKeyDown("d")) //ハイキック
         {
             script.Player_Hikick();
+            Player1_State = 3;
             print("d");
         }
-        else if (Input.GetKey("x")) //ライジングP
+        else if (Input.GetKeyDown("x")) //ライジングP
         {
             script.Player_RisingP();
+            Player1_State = 4;
             print("x");
         }
 

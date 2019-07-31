@@ -12,16 +12,19 @@ public class Config2pScript : PlayerConfig
 
     public Set_Status script;
 
-    GameObject player2;
+    public GameObject player2;
 
     public float Player2_HP;
     public float Player2_AT;
     public float Player2_DF;
+    public int Player2_State = 0;
     public Vector3 Player2_Pos;
     public Vector3 Player2_Rote;
 
     public GameObject Enemy;
     Vector3 Enemy_Pos;
+
+    public GameObject DamageClac;
 
     // Use this for initialization
     void Start()
@@ -55,16 +58,18 @@ public class Config2pScript : PlayerConfig
 
         player2.name = "2pChar";
         player2.tag = "player2";
+
+        Player2_HP = script.getHP();
+        Player2_AT = script.getAT();
+        Player2_DF = script.getDF();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Player2_HP = script.getHP();
-        Player2_AT = script.getAT();
-        Player2_DF = script.getDF();
         Player2_Pos = script.getposition();
         Player2_Rote = script.getrotetion();
+
 
         Transform myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
@@ -86,59 +91,72 @@ public class Config2pScript : PlayerConfig
 
         script.setrotetion(worldAngle);
         player2.transform.eulerAngles = worldAngle;
+        //player2.transform.position = Player2_Pos;
+        Player2_State = DamageClac.GetComponent<DamageCalcScript>().P2_State;
+        Player2_HP = DamageClac.GetComponent<DamageCalcScript>().P2_HP;
+        
 
         if (Input.GetKeyDown("i")) //前進
         {
             script.Player_Run();
+            Player2_State = 0;
             print("i");
         }
         else if (Input.GetKeyUp("i")) //前進ストップ
         {
             script.Player_Runcancel();
+            Player2_State = 0;
             print("i");
         }
 
         if (Input.GetKeyDown("u")) //左
         {
             script.Player_Run();
+            Player2_State = 0;
             print("u");
         }
 
         if (Input.GetKeyUp("u")) //左ストップ
         {
             script.Player_Runcancel();
+            Player2_State = 0;
             print("u");
         }
 
         if (Input.GetKeyDown("o")) //右
         {
             script.Player_Run();
+            Player2_State = 0;
             print("o");
         }
 
         if (Input.GetKeyUp("o")) //右ストップ
         {
             script.Player_Runcancel();
+            Player2_State = 0;
             print("o");
         }
         else if (Input.GetKeyDown("k")) //ジャブ
         {
             script.Player_Jab();
+            Player2_State = 1;
             print("k");
         }
-        else if (Input.GetKey("j")) //キック
+        else if (Input.GetKeyDown("j")) //キック
         {
-
+            Player2_State = 2;
             print("j");
         }
-        else if (Input.GetKey("l")) //ハイキック
+        else if (Input.GetKeyDown("l")) //ハイキック
         {
             script.Player_Hikick();
+            Player2_State = 3;
             print("l");
         }
-        else if (Input.GetKey("m")) //ライジングP
+        else if (Input.GetKeyDown("m")) //ライジングP
         {
             script.Player_RisingP();
+            Player2_State = 4;
             print("m");
         }
     }

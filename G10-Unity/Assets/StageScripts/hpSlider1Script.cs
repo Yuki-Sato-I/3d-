@@ -22,13 +22,17 @@ public class hpSlider1Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        //hpSlider1.value -= 10f;
+        hpSlider1.value = player1.GetComponent<Config1pScript>().Player1_HP;
+
+        Debug.Log(hpSlider1.value);
         if (hpSlider1.value <= 0f && count == 1)
         {
             MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
             MainConfig.winnerNum = 2;
             StartCoroutine("configDelay");
         }
+
+        
     }
 
     private IEnumerator DelaySetup()
