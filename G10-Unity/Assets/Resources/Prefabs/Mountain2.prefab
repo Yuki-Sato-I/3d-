@@ -2410,8 +2410,8 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.5
+    x: 0.5
+    y: 0
     width: 0.5
     height: 1
   near clip plane: 0.3
@@ -2486,6 +2486,7 @@ MonoBehaviour:
   AT: 70
   DF: 20
   mypos: {x: 0, y: 0, z: 0}
+  myrote: {x: 0, y: 0, z: 0}
 --- !u!137 &137826013363230970
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
