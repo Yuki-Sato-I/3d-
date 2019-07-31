@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4087955211558636}
   - component: {fileID: 20796296610371976}
+  - component: {fileID: 114265669491741794}
   - component: {fileID: 81134892201083758}
   m_Layer: 0
   m_Name: Camera
@@ -2475,6 +2476,18 @@ MonoBehaviour:
   AT: 70
   DF: 20
   mypos: {x: 0, y: 0, z: 0}
+  myrote: {x: 0, y: 0, z: 0}
+--- !u!114 &114265669491741794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000731189465200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d26d6634583408382f655f5d2db5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114612345628865520
 MonoBehaviour:
   m_ObjectHideFlags: 1

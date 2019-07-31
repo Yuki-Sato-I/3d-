@@ -14,7 +14,7 @@ public class WinerDisplayScript : MonoBehaviour
     {
         Winer = GetComponentInChildren<Text>();//UIのテキストの取得の仕方
         winnerNum = MainGameScript.getWinnerNum();
-
+		print("WinnerScript");
         switch (winnerNum) {
             case 1:
                 message = "~1P~";
@@ -22,7 +22,10 @@ public class WinerDisplayScript : MonoBehaviour
             case 2:
                 message = "~2P~";
                 break;
-            default:
+			case 3:
+				message = "drow";
+				break;
+			default:
                 message = "不正な画面遷移";
                 break;
         }
