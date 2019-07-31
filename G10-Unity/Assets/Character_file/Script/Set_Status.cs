@@ -114,6 +114,13 @@ public class Set_Status : MonoBehaviour
         anim.SetBool("Jab", true);
     }
 
+    public void Player_Kick()
+    {
+        anim = GetComponent<Animator>();
+        currentState = anim.GetCurrentAnimatorStateInfo(0);
+        previousState = currentState;
+        anim.SetBool("Spinkick", true);
+    }
     public void Player_Hikick() //ハイキック
     {
         anim = GetComponent<Animator>();
