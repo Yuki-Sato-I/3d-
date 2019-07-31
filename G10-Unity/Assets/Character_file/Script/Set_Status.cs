@@ -143,6 +143,6 @@ public class Set_Status : MonoBehaviour
         anim = GetComponent<Animator>();
         currentState = anim.GetCurrentAnimatorStateInfo(0);
         previousState = currentState;
-        anim.SetBool("Damagedown", true);
+        anim.SetBool("DamageDown", true);
     }
 }

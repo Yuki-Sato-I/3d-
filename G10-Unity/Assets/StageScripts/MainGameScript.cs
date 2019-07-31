@@ -19,12 +19,6 @@ public class MainGameScript : MonoBehaviour {
 
     void Start () {
 
-
-        DamageCalcScript damage = GameObject.Find("DamageCalc").GetComponent<DamageCalcScript>();
-        damage.CalcDamage(player1,player2);
-        Debug.Log("---------------");
-        Debug.Log(player1.HP);
-
     }
 
     public static int getWinnerNum()
