@@ -67,7 +67,8 @@ public class Config1pScript : PlayerConfig
         player1.name = "1pChar";
         player1.tag = "player1";
         //HP = player1.HP;
-
+        //print(script.getHP());
+        //print("###############################");
         Player1_HP = script.getHP();
         Player1_AT = script.getAT();
         Player1_DF = script.getDF();
@@ -157,7 +158,7 @@ public class Config1pScript : PlayerConfig
         }
         else if (Input.GetKeyDown("a")) //キック
         {
-            script.Player_Kick();
+            script.Player_Spinkick();
             Player1_State = 2;
             print("a");
         }

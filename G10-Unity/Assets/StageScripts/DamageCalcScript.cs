@@ -29,7 +29,8 @@ public class DamageCalcScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        P1_HP = Script1.GetComponent<Config1pScript>().Player1_HP;
+        P2_HP = Script2.GetComponent<Config2pScript>().Player2_HP;
     }
 	
 	// Update is called once per frame
@@ -40,11 +41,12 @@ public class DamageCalcScript : MonoBehaviour {
         P1_State = Script1.GetComponent<Config1pScript>().Player1_State;
         P2_State = Script2.GetComponent<Config2pScript>().Player2_State;
 
-        P1_HP = Script1.GetComponent<Config1pScript>().Player1_HP;
+        //P1_HP = Script1.GetComponent<Config1pScript>().Player1_HP;
+
         P1_AT = Script1.GetComponent<Config1pScript>().Player1_AT;
         P1_DF = Script1.GetComponent<Config1pScript>().Player1_DF;
 
-        P2_HP = Script2.GetComponent<Config2pScript>().Player2_HP;
+        //P2_HP = Script2.GetComponent<Config2pScript>().Player2_HP;
         P2_AT = Script2.GetComponent<Config2pScript>().Player2_AT;
         P2_DF = Script2.GetComponent<Config2pScript>().Player2_DF;
 

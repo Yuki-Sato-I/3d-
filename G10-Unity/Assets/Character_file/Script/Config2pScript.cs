@@ -144,7 +144,7 @@ public class Config2pScript : PlayerConfig
         }
         else if (Input.GetKeyDown("j")) //キック
         {
-            script.Player_Kick();
+            script.Player_Spinkick();
             Player2_State = 2;
             print("j");
         }
