@@ -12,7 +12,7 @@ public class Ganchan : Set_Status
 
         base.setName("Ganchan");
         base.setHP(1000);
-        base.setAT(20);
+        base.setAT(150);
         base.setDF(70);
 
     }

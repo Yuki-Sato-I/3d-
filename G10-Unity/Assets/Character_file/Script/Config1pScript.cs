@@ -10,6 +10,8 @@ public class Config1pScript : PlayerConfig
     private AnimatorStateInfo currentState;     // 現在のステート状態を保存する参照
     private AnimatorStateInfo previousState;    // ひとつ前のステート状態を保存する参照
 
+    public AudioClip seJab;
+
     public GameObject TestChar;
     public GameObject MountainDew;    //1
     public GameObject Pepsi;          //2
@@ -44,7 +46,7 @@ public class Config1pScript : PlayerConfig
         previousState = currentState;
         int NumOf1p = configScripts.GetPlayer1Num();
 
-        NumOf1p = 2;
+        NumOf1p = 3;
         //キャラ生成
         switch (NumOf1p)
         {
@@ -57,7 +59,7 @@ public class Config1pScript : PlayerConfig
                 script = player1.GetComponent<Pepsiman>();
                 break;
             case 3:
-                player1 = Instantiate(Ganchan, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
+                player1 = Instantiate(Ganchan, new Vector3(-10f, 3.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<Ganchan>();
                 break;
             default://デバック用
@@ -152,12 +154,13 @@ public class Config1pScript : PlayerConfig
         else if (Input.GetKeyDown("s")) //ジャブ
         {
             script.Player_Jab();
+            GetComponent<AudioSource>().PlayOneShot(seJab);
             Player1_State = 1;
             print("s");
         }
         else if (Input.GetKeyDown("a")) //キック
         {
-            script.Player_Kick();
+            script.Player_Spinkick();
             Player1_State = 2;
             print("a");
         }
