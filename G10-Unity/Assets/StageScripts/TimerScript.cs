@@ -21,7 +21,7 @@ public class TimerScript : MonoBehaviour {
         GetComponent<Text>().text = limitTime.ToString("F0");
 
         if(GetComponent<Text>().text == "0") {
-            
+            GetComponent<Text>().text = "0";
             MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
             P1_HP = GameObject.Find("1pConfig").GetComponent<Config1pScript>().Player1_HP;
             P2_HP = GameObject.Find("2pConfig").GetComponent<Config2pScript>().Player2_HP;

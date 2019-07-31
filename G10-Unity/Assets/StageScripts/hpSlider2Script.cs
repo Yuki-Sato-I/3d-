@@ -56,7 +56,6 @@ public class hpSlider2Script : MonoBehaviour {
 
         yield return new WaitForSeconds(3);
 
-
         SceneManager.LoadScene("ResultScene");
 
         yield break;

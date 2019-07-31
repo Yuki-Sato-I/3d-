@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 4365222101817374}
   - component: {fileID: 20797155016175404}
   - component: {fileID: 81890633665019306}
+  - component: {fileID: 114338046895521210}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2086,7 +2087,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904805663788860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -11.524597, y: 0.0000038146973, z: 35.7135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2095,7 +2096,7 @@ Transform:
   - {fileID: 4455914426981526}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4092646526184794
 Transform:
   m_ObjectHideFlags: 1
@@ -3797,6 +3798,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114338046895521210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236508633898906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d26d6634583408382f655f5d2db5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114786996096584132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3809,10 +3821,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NAME: Ganchan
-  HP: 1000
-  AT: 20
-  DF: 70
+  HP: 1900
+  AT: 150
+  DF: 120
   mypos: {x: 0, y: 0, z: 0}
+  myrote: {x: 0, y: 0, z: 0}
 --- !u!114 &114796543091476074
 MonoBehaviour:
   m_ObjectHideFlags: 1

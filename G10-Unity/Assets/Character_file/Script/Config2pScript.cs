@@ -6,6 +6,9 @@ public class Config2pScript : PlayerConfig
 {
 
     public AudioClip seJab;
+    public AudioClip seRisingP;
+    public AudioClip seHighKick;
+    public AudioClip seKick;
 
     public GameObject TestChar;
     public GameObject MountainDew;    //1
@@ -50,7 +53,7 @@ public class Config2pScript : PlayerConfig
                 script = player2.GetComponent<Pepsiman>();
                 break;
             case 3:
-                player2 = Instantiate(Ganchan, new Vector3(10f, 3.0f, 0.0f), Quaternion.identity);
+                player2 = Instantiate(Ganchan, new Vector3(10f, 5.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<Ganchan>();
                 break;
             default://デバック用
@@ -148,18 +151,21 @@ public class Config2pScript : PlayerConfig
         else if (Input.GetKeyDown("j")) //キック
         {
             script.Player_Spinkick();
+            GetComponent<AudioSource>().PlayOneShot(seKick);
             Player2_State = 2;
             print("j");
         }
         else if (Input.GetKeyDown("l")) //ハイキック
         {
             script.Player_Hikick();
+            GetComponent<AudioSource>().PlayOneShot(seHighKick);
             Player2_State = 3;
             print("l");
         }
         else if (Input.GetKeyDown("m")) //ライジングP
         {
             script.Player_RisingP();
+            GetComponent<AudioSource>().PlayOneShot(seRisingP);
             Player2_State = 4;
             print("m");
         }
