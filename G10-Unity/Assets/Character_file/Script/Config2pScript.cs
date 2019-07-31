@@ -40,19 +40,19 @@ public class Config2pScript : PlayerConfig
         switch (NumOf2p)
         {
             case 1:
-                player2 = Instantiate(MountainDew, new Vector3(10f, 1, 0.0f), Quaternion.identity);
+                player2 = Instantiate(MountainDew, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<MountainDew>();
                 break;
             case 2:
-                player2 = Instantiate(Pepsi, new Vector3(10f, 1, 0.0f), Quaternion.identity);
+                player2 = Instantiate(Pepsi, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<Pepsiman>();
                 break;
             case 3:
-                player2 = Instantiate(Ganchan, new Vector3(10f, 1, 0.0f), Quaternion.identity);
+                player2 = Instantiate(Ganchan, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<Ganchan>();
                 break;
             default://デバック用
-                player2 = Instantiate(TestChar, new Vector3(10f, 1, 0.0f), Quaternion.identity);
+                player2 = Instantiate(TestChar, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
                 break;
         }
 
@@ -144,6 +144,7 @@ public class Config2pScript : PlayerConfig
         }
         else if (Input.GetKeyDown("j")) //キック
         {
+            script.Player_Kick();
             Player2_State = 2;
             print("j");
         }

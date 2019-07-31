@@ -49,19 +49,19 @@ public class Config1pScript : PlayerConfig
         switch (NumOf1p)
         {
             case 1:
-                player1 = Instantiate(MountainDew, new Vector3(-10f, 1, 0.0f), Quaternion.identity);
+                player1 = Instantiate(MountainDew, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<MountainDew>();
                 break;
             case 2:
-                player1 = Instantiate(Pepsi, new Vector3(-10f, 1, 0.0f), Quaternion.identity);
+                player1 = Instantiate(Pepsi, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<Pepsiman>();
                 break;
             case 3:
-                player1 = Instantiate(Ganchan, new Vector3(-10f, 1, 0.0f), Quaternion.identity);
+                player1 = Instantiate(Ganchan, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<Ganchan>();
                 break;
             default://デバック用
-                player1 = Instantiate(TestChar, new Vector3(-10f, 1, 0.0f), Quaternion.identity);
+                player1 = Instantiate(TestChar, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
                 break;
         }
         player1.name = "1pChar";
@@ -157,7 +157,7 @@ public class Config1pScript : PlayerConfig
         }
         else if (Input.GetKeyDown("a")) //キック
         {
-            //script.Player_Kick;
+            script.Player_Kick();
             Player1_State = 2;
             print("a");
         }

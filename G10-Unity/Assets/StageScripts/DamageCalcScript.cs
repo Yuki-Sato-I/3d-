@@ -61,16 +61,16 @@ public class DamageCalcScript : MonoBehaviour {
             {
                 switch (P1_State)
                 {
-                    case 1: P2_HP -= (P1_AT * 3 - P2_DF);
+                    case 1: P2_HP -= (P1_AT * 2.5f - P2_DF);
                         time = 2.0f;
                         break;
-                    case 2: P2_HP -= (P1_AT * 4 - P2_DF);
+                    case 2: P2_HP -= (P1_AT * 3.6f - P2_DF);
                         time = 3.0f;
                         break;
-                    case 3: P2_HP -= (P1_AT * 5 - P2_DF);
+                    case 3: P2_HP -= (P1_AT * 4.0f - P2_DF);
                         time = 3.0f;
                         break;
-                    case 4: P2_HP -= (P1_AT * 6 - P2_DF);
+                    case 4: P2_HP -= (P1_AT * 5.0f - P2_DF);
                         time = 4.0f;
                         break;
                     default: break;
@@ -84,16 +84,16 @@ public class DamageCalcScript : MonoBehaviour {
             {
                 switch (P2_State)
                 {
-                    case 1: P1_HP -= (P2_AT * 3 - P1_DF);
+                    case 1: P1_HP -= (P2_AT * 2.5f - P1_DF);
                         time = 2.0f;
                         break;
-                    case 2: P1_HP -= (P2_AT * 4 - P1_DF);
+                    case 2: P1_HP -= (P2_AT * 3.6f - P1_DF);
                         time = 3.0f;
                         break;
-                    case 3: P1_HP -= (P2_AT * 5 - P1_DF);
+                    case 3: P1_HP -= (P2_AT * 4.0f - P1_DF);
                         time = 3.0f;
                         break;
-                    case 4: P1_HP -= (P2_AT * 6 - P1_DF);
+                    case 4: P1_HP -= (P2_AT * 5.0f - P1_DF);
                         time = 4.0f;
                         break;
                     default: break;
