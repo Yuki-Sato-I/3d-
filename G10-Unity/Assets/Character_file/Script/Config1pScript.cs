@@ -11,6 +11,9 @@ public class Config1pScript : PlayerConfig
     private AnimatorStateInfo previousState;    // ひとつ前のステート状態を保存する参照
 
     public AudioClip seJab;
+    public AudioClip seRisingP;
+    public AudioClip seHighKick;
+    public AudioClip seKick;
 
     public GameObject TestChar;
     public GameObject MountainDew;    //1
@@ -59,7 +62,7 @@ public class Config1pScript : PlayerConfig
                 script = player1.GetComponent<Pepsiman>();
                 break;
             case 3:
-                player1 = Instantiate(Ganchan, new Vector3(-10f, 3.0f, 0.0f), Quaternion.identity);
+                player1 = Instantiate(Ganchan, new Vector3(-10f, 5.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<Ganchan>();
                 break;
             default://デバック用
@@ -161,18 +164,21 @@ public class Config1pScript : PlayerConfig
         else if (Input.GetKeyDown("a")) //キック
         {
             script.Player_Spinkick();
+            GetComponent<AudioSource>().PlayOneShot(seKick);
             Player1_State = 2;
             print("a");
         }
         else if (Input.GetKeyDown("d")) //ハイキック
         {
             script.Player_Hikick();
+            GetComponent<AudioSource>().PlayOneShot(seHighKick);
             Player1_State = 3;
             print("d");
         }
         else if (Input.GetKeyDown("x")) //ライジングP
         {
             script.Player_RisingP();
+            GetComponent<AudioSource>().PlayOneShot(seRisingP);
             Player1_State = 4;
             print("x");
         }
