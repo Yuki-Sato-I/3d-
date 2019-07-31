@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MainGameScript : MonoBehaviour {
 
+    private AudioSource audioSource;
+
     Config1pScript player1;
     Config2pScript player2;
 
@@ -18,7 +20,9 @@ public class MainGameScript : MonoBehaviour {
 
 
     void Start () {
+        audioSource = gameObject.GetComponent<AudioSource>();
 
+        audioSource.Play();
     }
 
     public static int getWinnerNum()

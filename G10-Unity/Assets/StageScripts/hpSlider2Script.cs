@@ -9,6 +9,8 @@ public class hpSlider2Script : MonoBehaviour {
     Slider hpSlider2;
     public GameObject player2;
 
+    public AudioClip se;
+
     private int count = 0;
 
     // Use this for initialization
@@ -29,6 +31,8 @@ public class hpSlider2Script : MonoBehaviour {
         {
             MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
             MainConfig.winnerNum = 1;
+
+            GetComponent<AudioSource>().PlayOneShot(se);
             StartCoroutine("configDelay");
         }
     }
@@ -50,7 +54,8 @@ public class hpSlider2Script : MonoBehaviour {
     private IEnumerator configDelay()
     {
 
-        yield return null;
+        yield return new WaitForSeconds(3);
+
 
         SceneManager.LoadScene("ResultScene");
 

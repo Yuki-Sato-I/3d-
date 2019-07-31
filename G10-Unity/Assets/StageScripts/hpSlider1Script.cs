@@ -9,12 +9,13 @@ public class hpSlider1Script : MonoBehaviour {
 	Slider hpSlider1;
 	public GameObject player1;
 
+    public AudioClip se;
+
     private int count = 0;
 
 	// Use this for initialization
 	void Start () {
 		hpSlider1 = GetComponent<Slider>();
-
         //1フレーム後に実行する
         StartCoroutine("DelaySetup");
     }
@@ -29,6 +30,8 @@ public class hpSlider1Script : MonoBehaviour {
         {
             MainGameScript MainConfig = GameObject.Find("StageConfig").GetComponent<MainGameScript>();
             MainConfig.winnerNum = 2;
+
+            GetComponent<AudioSource>().PlayOneShot(se);
             StartCoroutine("configDelay");
         }
 
@@ -52,8 +55,7 @@ public class hpSlider1Script : MonoBehaviour {
 
     private IEnumerator configDelay()
     {
-
-        yield return null;
+        yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene("ResultScene");
 

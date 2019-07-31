@@ -5,6 +5,8 @@ using UnityEngine;
 public class Config2pScript : PlayerConfig
 {
 
+    public AudioClip seJab;
+
     public GameObject TestChar;
     public GameObject MountainDew;    //1
     public GameObject Pepsi;          //2
@@ -34,7 +36,7 @@ public class Config2pScript : PlayerConfig
         // プレハブからインスタンスを生成
         int NumOf2p = configScripts.GetPlayer2Num();
 
-        NumOf2p = 1;
+        NumOf2p = 2;
 
         //2pのキャラ生成
         switch (NumOf2p)
@@ -48,7 +50,7 @@ public class Config2pScript : PlayerConfig
                 script = player2.GetComponent<Pepsiman>();
                 break;
             case 3:
-                player2 = Instantiate(Ganchan, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
+                player2 = Instantiate(Ganchan, new Vector3(10f, 3.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<Ganchan>();
                 break;
             default://デバック用
@@ -139,6 +141,7 @@ public class Config2pScript : PlayerConfig
         else if (Input.GetKeyDown("k")) //ジャブ
         {
             script.Player_Jab();
+            GetComponent<AudioSource>().PlayOneShot(seJab);
             Player2_State = 1;
             print("k");
         }
