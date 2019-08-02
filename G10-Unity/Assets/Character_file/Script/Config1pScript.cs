@@ -39,7 +39,7 @@ public class Config1pScript : PlayerConfig
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
 
         // プレハブを取得
@@ -49,19 +49,18 @@ public class Config1pScript : PlayerConfig
         previousState = currentState;
         int NumOf1p = configScripts.GetPlayer1Num();
 
-        NumOf1p = 3;
         //キャラ生成
         switch (NumOf1p)
         {
-            case 1:
+            case 0:
                 player1 = Instantiate(MountainDew, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<MountainDew>();
                 break;
-            case 2:
+            case 1:
                 player1 = Instantiate(Pepsi, new Vector3(-10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<Pepsiman>();
                 break;
-            case 3:
+            case 2:
                 player1 = Instantiate(Ganchan, new Vector3(-10f, 5.0f, 0.0f), Quaternion.identity);
                 script = player1.GetComponent<Ganchan>();
                 break;

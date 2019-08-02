@@ -32,27 +32,25 @@ public class Config2pScript : PlayerConfig
     public GameObject DamageClac;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
 
         // プレハブを取得
         // プレハブからインスタンスを生成
         int NumOf2p = configScripts.GetPlayer2Num();
 
-        NumOf2p = 2;
-
         //2pのキャラ生成
         switch (NumOf2p)
         {
-            case 1:
+            case 0:
                 player2 = Instantiate(MountainDew, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<MountainDew>();
                 break;
-            case 2:
+            case 1:
                 player2 = Instantiate(Pepsi, new Vector3(10f, 0.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<Pepsiman>();
                 break;
-            case 3:
+            case 2:
                 player2 = Instantiate(Ganchan, new Vector3(10f, 5.0f, 0.0f), Quaternion.identity);
                 script = player2.GetComponent<Ganchan>();
                 break;
