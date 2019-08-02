@@ -1,7 +1,7 @@
 # unityで格闘ゲームを作ろう(3D)
 
 g-10班
-
+https://gitlab.cis.iwate-u.ac.jp/2019_g10/MountainDew
 *プレイ方法は下記に書いてある
 
 ## 開発の流れ
