@@ -41,8 +41,10 @@ public class hpSlider2Script : MonoBehaviour {
     {
 
         yield return null;
+        yield return null;
         float player2_HP = player2.GetComponent<Config2pScript>().Player2_HP;
-
+        print("デバック用2p");
+        print(player2_HP);
         //スライダーの最大値の設定
         hpSlider2.maxValue = player2_HP;
         //スライダーの現在値の設定

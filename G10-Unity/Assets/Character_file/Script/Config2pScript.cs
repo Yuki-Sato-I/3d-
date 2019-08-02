@@ -32,7 +32,7 @@ public class Config2pScript : PlayerConfig
     public GameObject DamageClac;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
 
         // プレハブを取得

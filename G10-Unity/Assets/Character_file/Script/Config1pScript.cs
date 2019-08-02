@@ -39,7 +39,7 @@ public class Config1pScript : PlayerConfig
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
 
         // プレハブを取得

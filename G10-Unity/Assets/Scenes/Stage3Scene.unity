@@ -1153,9 +1153,9 @@ MonoBehaviour:
   AT: 0
   DF: 0
   seJab: {fileID: 8300000, guid: 28eed4897ca324ba1a8d4f5ad2d808a7, type: 3}
-  seRisingP: {fileID: 0}
-  seHighKick: {fileID: 0}
-  seKick: {fileID: 0}
+  seRisingP: {fileID: 8300000, guid: 1636d51cd539a42acb1f064ba7479413, type: 3}
+  seHighKick: {fileID: 8300000, guid: dc5d5e520f47b4456a627ffc78dfad78, type: 3}
+  seKick: {fileID: 8300000, guid: 74445982b3c8847fd826875a1371903f, type: 3}
   TestChar: {fileID: 1354952204606130, guid: 3f9b67ffc4ffa4055960a834638c9d85, type: 2}
   MountainDew: {fileID: 1642442849566694, guid: 9792cb39b6bf0354b92d3744ec530968,
     type: 2}
@@ -2534,9 +2534,9 @@ MonoBehaviour:
   AT: 0
   DF: 0
   seJab: {fileID: 8300000, guid: 28eed4897ca324ba1a8d4f5ad2d808a7, type: 3}
-  seRisingP: {fileID: 0}
-  seHighKick: {fileID: 0}
-  seKick: {fileID: 0}
+  seRisingP: {fileID: 8300000, guid: 1636d51cd539a42acb1f064ba7479413, type: 3}
+  seHighKick: {fileID: 8300000, guid: dc5d5e520f47b4456a627ffc78dfad78, type: 3}
+  seKick: {fileID: 8300000, guid: 74445982b3c8847fd826875a1371903f, type: 3}
   TestChar: {fileID: 1354952204606130, guid: 3f9b67ffc4ffa4055960a834638c9d85, type: 2}
   MountainDew: {fileID: 1557293508766296, guid: 69871355e3337804fa9b819992c56824,
     type: 2}
