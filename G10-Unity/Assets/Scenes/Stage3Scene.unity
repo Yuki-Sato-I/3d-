@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.23236752, g: 0.23554039, b: 0.2723026, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,7 +380,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e77fbcd72c461480fb0e764fa4428bfa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36bf96c6725934fc592916d68390b485, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1153,6 +1153,9 @@ MonoBehaviour:
   AT: 0
   DF: 0
   seJab: {fileID: 8300000, guid: 28eed4897ca324ba1a8d4f5ad2d808a7, type: 3}
+  seRisingP: {fileID: 0}
+  seHighKick: {fileID: 0}
+  seKick: {fileID: 0}
   TestChar: {fileID: 1354952204606130, guid: 3f9b67ffc4ffa4055960a834638c9d85, type: 2}
   MountainDew: {fileID: 1642442849566694, guid: 9792cb39b6bf0354b92d3744ec530968,
     type: 2}
@@ -2531,6 +2534,9 @@ MonoBehaviour:
   AT: 0
   DF: 0
   seJab: {fileID: 8300000, guid: 28eed4897ca324ba1a8d4f5ad2d808a7, type: 3}
+  seRisingP: {fileID: 0}
+  seHighKick: {fileID: 0}
+  seKick: {fileID: 0}
   TestChar: {fileID: 1354952204606130, guid: 3f9b67ffc4ffa4055960a834638c9d85, type: 2}
   MountainDew: {fileID: 1557293508766296, guid: 69871355e3337804fa9b819992c56824,
     type: 2}
